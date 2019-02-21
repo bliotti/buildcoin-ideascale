@@ -1,32 +1,32 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 
 // reactstrap components
-import { Button } from "reactstrap";
+import { Button } from 'reactstrap'
 
 class FixedPlugin extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      classes: "dropdown show-dropdown"
-    };
+      classes: 'dropdown show-dropdown'
+    }
   }
   handleClick = () => {
-    if (this.state.classes === "dropdown show-dropdown") {
-      this.setState({ classes: "dropdown show-dropdown show" });
+    if (this.state.classes === 'dropdown show-dropdown') {
+      this.setState({ classes: 'dropdown show-dropdown show' })
     } else {
-      this.setState({ classes: "dropdown show-dropdown" });
+      this.setState({ classes: 'dropdown show-dropdown' })
     }
-  };
+  }
   activateMode = mode => {
     switch (mode) {
-      case "light":
-        document.body.classList.add("white-content");
-        break;
+      case 'light':
+        document.body.classList.add('white-content')
+        break
       default:
-        document.body.classList.remove("white-content");
-        break;
+        document.body.classList.remove('white-content')
+        break
     }
-  };
+  }
   render() {
     return (
       <div className="fixed-plugin">
@@ -40,52 +40,52 @@ class FixedPlugin extends Component {
               <div className="badge-colors text-center">
                 <span
                   className={
-                    this.props.bgColor === "primary"
-                      ? "badge filter badge-primary active"
-                      : "badge filter badge-primary"
+                    this.props.bgColor === 'primary'
+                      ? 'badge filter badge-primary active'
+                      : 'badge filter badge-primary'
                   }
                   data-color="primary"
                   onClick={() => {
-                    this.props.handleBgClick("primary");
+                    this.props.handleBgClick('primary')
                   }}
-                />{" "}
+                />{' '}
                 <span
                   className={
-                    this.props.bgColor === "blue"
-                      ? "badge filter badge-info active"
-                      : "badge filter badge-info"
+                    this.props.bgColor === 'blue'
+                      ? 'badge filter badge-info active'
+                      : 'badge filter badge-info'
                   }
                   data-color="blue"
                   onClick={() => {
-                    this.props.handleBgClick("blue");
+                    this.props.handleBgClick('blue')
                   }}
-                />{" "}
+                />{' '}
                 <span
                   className={
-                    this.props.bgColor === "green"
-                      ? "badge filter badge-success active"
-                      : "badge filter badge-success"
+                    this.props.bgColor === 'green'
+                      ? 'badge filter badge-success active'
+                      : 'badge filter badge-success'
                   }
                   data-color="green"
                   onClick={() => {
-                    this.props.handleBgClick("green");
+                    this.props.handleBgClick('green')
                   }}
-                />{" "}
+                />{' '}
               </div>
             </li>
             <li className="adjustments-line text-center color-change">
-              <span className="color-label">LIGHT MODE</span>{" "}
+              <span className="color-label">LIGHT MODE</span>{' '}
               <span
                 className="badge light-badge mr-2"
-                onClick={() => this.activateMode("light")}
-              />{" "}
+                onClick={() => this.activateMode('light')}
+              />{' '}
               <span
                 className="badge dark-badge ml-2"
-                onClick={() => this.activateMode("dark")}
-              />{" "}
-              <span className="color-label">DARK MODE</span>{" "}
+                onClick={() => this.activateMode('dark')}
+              />{' '}
+              <span className="color-label">DARK MODE</span>{' '}
             </li>
-            <li className="button-container">
+            {/* <li className="button-container">
               <Button
                 href="https://www.creative-tim.com/product/black-dashboard-react"
                 color="primary"
@@ -115,12 +115,12 @@ class FixedPlugin extends Component {
               >
                 Get pro version
               </Button>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default FixedPlugin;
+export default FixedPlugin

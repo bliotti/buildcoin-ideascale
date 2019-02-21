@@ -1,10 +1,10 @@
 /*eslint-disable*/
-import React from "react";
+import React from 'react'
 // used for making the prop types of this component
-import PropTypes from "prop-types";
-
+import PropTypes from 'prop-types'
+//! DONe
 // reactstrap components
-import { Container, Row, Nav, NavItem, NavLink } from "reactstrap";
+import { Container, Row, Nav, NavItem, NavLink } from 'reactstrap'
 
 class Footer extends React.Component {
   render() {
@@ -13,31 +13,30 @@ class Footer extends React.Component {
         <Container fluid>
           <Nav>
             <NavItem>
-              <NavLink href="javascript:void(0)">Creative Tim</NavLink>
+              <NavLink
+                href="https://buildcoinfoundation.ideascale.com"
+                // tag="https://buildcoinfoundation.ideascale.com"
+                to="https://buildcoinfoundation.ideascale.com"
+              >
+                Idea Share
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="javascript:void(0)">About Us</NavLink>
+              <NavLink href="https://www.buildcoinfoundation.org/">
+                About Build Coin
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="javascript:void(0)">Blog</NavLink>
+              <NavLink href="https://medium.com/@buildcoin">Blog</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="https://t.me/buildcoinfound">Telegram</NavLink>
             </NavItem>
           </Nav>
-          <div className="copyright">
-            © {new Date().getFullYear()} made with{" "}
-            <i className="tim-icons icon-heart-2" /> by{" "}
-            <a
-              href="javascript:void(0)"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Creative Tim
-            </a>{" "}
-            for a better web.
-          </div>
         </Container>
       </footer>
-    );
+    )
   }
 }
 
-export default Footer;
+export default Footer

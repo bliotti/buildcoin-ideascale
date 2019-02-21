@@ -1,46 +1,46 @@
 /*eslint-disable*/
-import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import React from 'react'
+import { NavLink, Link } from 'react-router-dom'
 // nodejs library to set properties for components
-import { PropTypes } from "prop-types";
+import { PropTypes } from 'prop-types'
 
 // javascript plugin used to create scrollbars on windows
-import PerfectScrollbar from "perfect-scrollbar";
+import PerfectScrollbar from 'perfect-scrollbar'
 
 // reactstrap components
-import { Nav } from "reactstrap";
+import { Nav } from 'reactstrap'
 
-var ps;
+var ps
 
 class Sidebar extends React.Component {
   constructor(props) {
-    super(props);
-    this.activeRoute.bind(this);
+    super(props)
+    this.activeRoute.bind(this)
   }
   // verifies if routeName is the one active (in browser input)
   activeRoute(routeName) {
-    return this.props.location.pathname.indexOf(routeName) > -1 ? "active" : "";
+    return this.props.location.pathname.indexOf(routeName) > -1 ? 'active' : ''
   }
   componentDidMount() {
-    if (navigator.platform.indexOf("Win") > -1) {
+    if (navigator.platform.indexOf('Win') > -1) {
       ps = new PerfectScrollbar(this.refs.sidebar, {
         suppressScrollX: true,
         suppressScrollY: false
-      });
+      })
     }
   }
   componentWillUnmount() {
-    if (navigator.platform.indexOf("Win") > -1) {
-      ps.destroy();
+    if (navigator.platform.indexOf('Win') > -1) {
+      ps.destroy()
     }
   }
   linkOnClick = () => {
-    document.documentElement.classList.remove("nav-open");
-  };
+    document.documentElement.classList.remove('nav-open')
+  }
   render() {
-    const { bgColor, routes, rtlActive, logo } = this.props;
-    let logoImg = null;
-    let logoText = null;
+    const { bgColor, routes, rtlActive, logo } = this.props
+    let logoImg = null
+    let logoText = null
     if (logo !== undefined) {
       if (logo.outterLink !== undefined) {
         logoImg = (
@@ -54,7 +54,7 @@ class Sidebar extends React.Component {
               <img src={logo.imgSrc} alt="react-logo" />
             </div>
           </a>
-        );
+        )
         logoText = (
           <a
             href={logo.outterLink}
@@ -64,7 +64,7 @@ class Sidebar extends React.Component {
           >
             {logo.text}
           </a>
-        );
+        )
       } else {
         logoImg = (
           <Link
@@ -76,7 +76,7 @@ class Sidebar extends React.Component {
               <img src={logo.imgSrc} alt="react-logo" />
             </div>
           </Link>
-        );
+        )
         logoText = (
           <Link
             to={logo.innerLink}
@@ -85,7 +85,7 @@ class Sidebar extends React.Component {
           >
             {logo.text}
           </Link>
-        );
+        )
       }
     }
     return (
@@ -99,12 +99,12 @@ class Sidebar extends React.Component {
           ) : null}
           <Nav>
             {routes.map((prop, key) => {
-              if (prop.redirect) return null;
+              if (prop.redirect) return null
               return (
                 <li
                   className={
                     this.activeRoute(prop.path) +
-                    (prop.pro ? " active-pro" : "")
+                    (prop.pro ? ' active-pro' : '')
                   }
                   key={key}
                 >
@@ -118,26 +118,26 @@ class Sidebar extends React.Component {
                     <p>{rtlActive ? prop.rtlName : prop.name}</p>
                   </NavLink>
                 </li>
-              );
+              )
             })}
           </Nav>
         </div>
       </div>
-    );
+    )
   }
 }
 
 Sidebar.defaultProps = {
   rtlActive: false,
-  bgColor: "primary",
+  bgColor: 'primary',
   routes: [{}]
-};
+}
 
 Sidebar.propTypes = {
   // if true, then instead of the routes[i].name, routes[i].rtlName will be rendered
   // insde the links of this component
   rtlActive: PropTypes.bool,
-  bgColor: PropTypes.oneOf(["primary", "blue", "green"]),
+  bgColor: PropTypes.oneOf(['primary', 'blue', 'green']),
   routes: PropTypes.arrayOf(PropTypes.object),
   logo: PropTypes.shape({
     // innerLink is for links that will direct the user within the app
@@ -151,6 +151,6 @@ Sidebar.propTypes = {
     // the image src of the logo
     imgSrc: PropTypes.string
   })
-};
+}
 
-export default Sidebar;
+export default Sidebar
