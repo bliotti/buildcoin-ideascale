@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/buildcoin/precache-manifest.7fcb34ee6bf467481651eb3dd5925abf.js"
+  "/buildcoin-ideascale/precache-manifest.6bed47f1737029fd53dedb92bf075aa9.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/buildcoin/index.html", {
+workbox.routing.registerNavigationRoute("/buildcoin-ideascale/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
